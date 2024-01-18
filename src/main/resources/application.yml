@@ -1,0 +1,35 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: evaluation_spring
+  profiles:
+    active: development
+  datasource:
+    password: 'evaluation'
+    url: jdbc:postgresql://localhost:5432/evaluation
+    username: admin_evaluation
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    mongodb:
+      uri: mongodb+srv://adminE:evaluation123@evaluationcluster.q8pjbbz.mongodb.net/evaluation
+      auto-index-creation: true
+#
+#---
+#
+#spring:
+#  profiles: developmentMongo
+#  datasource:
+#    url: jdbc:mongodb://localhost:3306/evaluation
+#    username: Amongo
+#    password: mongo
+
