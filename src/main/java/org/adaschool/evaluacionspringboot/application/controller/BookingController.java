@@ -20,7 +20,7 @@ public class BookingController {
 
     private final GeneralService generalService;
 
-    public BookingController(@Autowired GeneralService generalService) {
+    public BookingController(GeneralService generalService) {
         this.generalService = generalService;
     }
 

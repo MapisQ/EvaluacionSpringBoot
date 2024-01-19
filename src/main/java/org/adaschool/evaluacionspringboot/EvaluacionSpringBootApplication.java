@@ -14,22 +14,7 @@ import java.util.List;
 @SpringBootApplication
 public class EvaluacionSpringBootApplication {
 
-    public static void main(String[] args) throws BookingException {
-        ConfigurableApplicationContext applicationContext =
-                SpringApplication.run(EvaluacionSpringBootApplication.class, args);
-        GeneralService generalService = applicationContext.getBean(GeneralService.class);
-        if (generalService instanceof BookingServiceMongo) {
-            generalService.save(new BookingMongo());
-            List<BookingMongo> all = generalService.findAll(1, 50);
-            for (BookingMongo bookingMongo : all) {
-                System.out.println(bookingMongo);
-            }
-        } else {
-            generalService.save(new org.adaschool.evaluacionspringboot.domain.entity.Booking());
-            List<org.adaschool.evaluacionspringboot.domain.entity.Booking> all = generalService.findAll(1,50);
-            for (org.adaschool.evaluacionspringboot.domain.entity.Booking booking : all) {
-                System.out.println(booking);
-            }
-        }
+    public static void main(String[] args) {
+        SpringApplication.run(EvaluacionSpringBootApplication.class, args);
     }
 }
